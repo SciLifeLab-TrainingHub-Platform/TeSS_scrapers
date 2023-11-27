@@ -24,6 +24,7 @@ class BioschemasScraper < Tess::Scrapers::Scraper
   def scrape
     config[:providers].each do |provider_metadata|
       begin
+        puts "Providers: #{config[:providers]}"
         puts "  #{provider_metadata['title']}"
         source_url = provider_metadata.delete('source')
         sitemap_regex = provider_metadata.delete('sitemap_regex')
